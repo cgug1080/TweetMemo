@@ -13,7 +13,7 @@
 #include<String.h>
 
 #include "param.h"
-
+#include "define.h"
 
 int main()
 {
@@ -22,6 +22,7 @@ int main()
 	int mode = 0;
 
 	//ユーザー選択
+	printf("ユーザー名を入力してください\n");
 	scanf_s("%s", nowuser,NAMELONG);
 	printf("ユーザー名：%s\n", nowuser);
 
@@ -33,10 +34,10 @@ int main()
 		if (mode == 1) {
 			printf("100字以内でメモを書き込みEnterを押してください\n");
 			scanf_s("%s", tmpmemo,CHARBUFF);
-
-			printf("正しく保存されました\n");
+			writememo((char*)nowuser);
 		}else if (mode == 2) {
-
+			printf("%sのメモを表示します\n",nowuser);
+			readmemo((char*)nowuser);
 		}
 	}
 }

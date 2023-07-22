@@ -1,12 +1,12 @@
 #include <iostream>
 #include <Windows.h>
 #include "define.h"
-//void readmemo() {
+void readmemo(char* nowuser) {
 
-//}
-//void writememo() {
+}
+void writememo(char* nowuser) {
 
-//}
-//void getGurrentDirectory(char* currentDirectory) {
-//	GetCurrentDirectory(CHARBUFF, currentDirectory);
-//}
+}
+void getGurrentDirectory(char* currentDirectory) {
+	GetCurrentDirectory(CHARBUFF, currentDirectory);
+}

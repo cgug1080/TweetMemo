@@ -1,13 +1,6 @@
 #pragma once
 #include "param.h"
 
-void getGurrentDirectory(char* currentDirectory) {
-	GetCurrentDirectory(CHARBUFF, currentDirectory);
-}
-
-void readmemo() {
-
-}
-void writememo() {
-
-}
+void getGurrentDirectory(char* currentDirectory);
+void readmemo(char* nowuser);
+void writememo(char* nowuser);
