@@ -34,10 +34,10 @@ int main()
 		if (mode == 1) {
 			printf("100字以内でメモを書き込みEnterを押してください\n");
 			scanf_s("%s", tmpmemo,CHARBUFF);
-			writememo((char*)nowuser);
+			writeMemo((char*)nowuser,(char*)tmpmemo);
 		}else if (mode == 2) {
 			printf("%sのメモを表示します\n",nowuser);
-			readmemo((char*)nowuser);
+			readMemo((char*)nowuser);
 		}
 	}
 }

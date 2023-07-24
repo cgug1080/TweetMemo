@@ -1,10 +1,10 @@
 #include <iostream>
 #include <Windows.h>
 #include "define.h"
-void readmemo(char* nowuser) {
-
+void readMemo(char* nowuser) {
+	
 }
-void writememo(char* nowuser) {
+void writeMemo(char* nowuser,char* tempmemo) {
 
 }
 void getGurrentDirectory(char* currentDirectory) {

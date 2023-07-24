@@ -2,5 +2,5 @@
 #include "param.h"
 
 void getGurrentDirectory(char* currentDirectory);
-void readmemo(char* nowuser);
-void writememo(char* nowuser);
+void readMemo(char* nowuser);
+void writeMemo(char* nowuser,char* tmpmemo);
