@@ -20,11 +20,28 @@ int main()
 	char nowuser[NAMELONG];
 	char tmpmemo[CHARBUFF];
 	int mode = 0;
-
-	//ユーザー選択
-	printf("ユーザー名を入力してください\n");
-	scanf_s("%s", nowuser,NAMELONG);
-	printf("ユーザー名：%s\n", nowuser);
+	//設定ファイルからデフォルトユーザーを取得
+	char defaultuser[NAMELONG];
+	char currentDirectory[CHARBUFF];
+	getGurrentDirectory(currentDirectory);
+	char settingFile[CHARBUFF];
+	sprintf_s(settingFile, "%s\\setting.ini", currentDirectory);
+	GetPrivateProfileString("default","user","none",nowuser,NAMELONG,settingFile);
+	
+	//設定ファイルで定められたユーザーのまま実行するか
+	printf("このユーザーで続行しますか？%s\n", nowuser);
+	printf("続行する場合は1を、変更する場合は2を入力し、Enterを押してください\n");
+	while (mode!=1) {
+		scanf_s("%d", &mode);
+		if (mode == 2) {
+			//ユーザー選択
+			printf("ユーザー名を入力してください\n");
+			scanf_s("%s", nowuser, NAMELONG);
+			printf("ユーザー名：%s\n", nowuser);
+			mode = 1;
+			break;
+		}
+	}
 
 	//モード選択
 	while (1) {
