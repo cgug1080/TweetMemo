@@ -3,6 +3,6 @@
 #define NAMELONG 10
 
 struct User {
-	char user;
-	char password;
+	char* user;
+	char* tweet;
 };

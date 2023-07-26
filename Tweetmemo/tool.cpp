@@ -37,6 +37,8 @@ void writeMemo(char nowuser[CHARBUFF],char* tempmemo) {
 	}
 }
 
+
+
 void getGurrentDirectory(char* currentDirectory) {
 	GetCurrentDirectory(CHARBUFF, currentDirectory);
 }

@@ -12,7 +12,7 @@ int main()
 	char tmpmemo[CHARBUFF];
 	int mode = 0;
 
-	//設定ファイルからデフォルトユーザーを取得
+	//設定ファイルからデフォルトユーザー、パスワード設定を取得
 	char defaultuser[NAMELONG];
 	char currentDirectory[CHARBUFF];
 	getGurrentDirectory(currentDirectory);
@@ -20,7 +20,7 @@ int main()
 	sprintf_s(settingFile, "%s\\setting.ini", currentDirectory);
 	GetPrivateProfileString("default","user","none",nowuser,NAMELONG,settingFile);
 
-	
+
 	//設定ファイルで定められたユーザーのまま実行するか
 	printf("このユーザーで続行しますか？:%s\n", nowuser);
 	printf("続行する場合は1を、変更する場合は2を入力し、Enterを押してください\n");
@@ -45,7 +45,14 @@ int main()
 		
 		if (mode == 1) {
 			printf("120字以内でメモを書き込みEnterを押してください\n");
-			scanf_s("%s", tmpmemo,CHARBUFF);
+			scanf_s("%s", tmpmemo,CHARBUFF);			
+			
+			//構造体格納
+			User Nowuser;
+			User* pNowuser = &Nowuser;
+			pNowuser->tweet = nowuser;
+			pNowuser->user = nowuser;
+
 			writeMemo((char*)nowuser,(char*)tmpmemo);
 			mode = 0;
 		}else if (mode == 2) {
