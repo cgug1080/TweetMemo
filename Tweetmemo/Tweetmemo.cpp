@@ -12,7 +12,7 @@ int main()
 	char tmpmemo[CHARBUFF];
 	int mode = 0;
 
-	//設定ファイルからデフォルトユーザー、パスワード設定を取得
+	//設定ファイルからデフォルトユーザーを取得
 	char defaultuser[NAMELONG];
 	char currentDirectory[CHARBUFF];
 	getGurrentDirectory(currentDirectory);
